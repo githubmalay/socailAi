@@ -1,0 +1,7 @@
+{
+  "name": "Copy of SocialAI Generator",
+  "description": "An AI-powered social media assistant that analyzes images to generate engaging captions, hashtags, and strategies, with direct integration for Facebook uploads.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

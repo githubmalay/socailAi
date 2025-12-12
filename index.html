@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SHG Boost - SocialAI Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --glass-border: rgba(255, 255, 255, 0.4);
+        --glass-bg: rgba(255, 255, 255, 0.65);
+        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+      }
+
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f8fafc;
+        /* Default to scroll for mobile */
+        overflow-x: hidden; 
+        overflow-y: auto;
+      }
+
+      /* Desktop: Lock body scroll to create App-like feel */
+      @media (min-width: 1024px) {
+        html, body {
+          height: 100%;
+          overflow: hidden;
+        }
+      }
+      
+      /* Premium Animated Background */
+      .mesh-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+        background-size: 200% 200%;
+        opacity: 0.8;
+      }
+      
+      .gradient-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.4;
+        animation: floatOrb 20s infinite ease-in-out alternate;
+      }
+      .orb-1 { top: -10%; left: -10%; width: 60vw; height: 60vw; background: #818cf8; animation-delay: 0s; }
+      .orb-2 { bottom: -20%; right: -10%; width: 70vw; height: 70vw; background: #f472b6; animation-delay: -5s; }
+      .orb-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #22d3ee; animation-delay: -10s; }
+
+      @keyframes floatOrb {
+        0% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(20px, 30px) scale(1.05); }
+        100% { transform: translate(-20px, -10px) scale(0.95); }
+      }
+
+      /* Custom Scrollbar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.3);
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(148, 163, 184, 0.5);
+      }
+      
+      /* Utilities */
+      .glass-panel {
+        background: var(--glass-bg);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+      
+      .text-balance {
+        text-wrap: balance;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "jszip": "https://esm.sh/jszip@3.10.1"
+  }
+}
+</script>
+</head>
+  <body class="antialiased text-slate-800">
+    <div class="mesh-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <div id="root" style="height: 100%;"></div>
+  </body>
+</html>
